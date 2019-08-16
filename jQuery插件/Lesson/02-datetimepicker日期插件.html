@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>datetimepicker</title>
+    <link rel="stylesheet" href="./datetimepicker/jquery.datetimepicker.min.css">
+</head>
+<body>
+    
+    <input type="text" id="datetime">
+    <input type="text" id="datetime1">
+
+    <script src="../../jquery-1.11.1.js"></script>
+    <script src="./datetimepicker/jquery.datetimepicker.full.min.js"></script>
+
+    <script>
+        $(function() {
+            // 设置全局的语言
+            $.datetimepicker.setLocale('ch');
+
+            // 调用插件
+            $("#datetime").datetimepicker()
+
+            $("#datetime1").datetimepicker({
+                datepicker:false,
+                format:'H:i'
+            })
+        })
+    </script>
+</body>
+</html>
