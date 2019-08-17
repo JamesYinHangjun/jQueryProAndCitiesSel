@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>菜单展开收缩案例</title>
+    <style>
+        body {
+            font: 16px "Microsoft YaHei",san-serif;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #myList {
+            width: 600px;
+        }
+        #myList li {
+            width: 200px;
+            height: 20px;
+            padding: 20px;
+            line-height: 20px;
+            font-size: 20px;
+            border: 1px solid #ccc;
+        }
+        #myList li.current {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+        <ul id="myList">
+            <li>基本选择器</li>
+            <li>过滤选择器</li>
+            <li>属性选择器</li>
+            <li>内容选择器</li>
+            <li>表单选择器</li>
+            <li>表单对象选择器</li>
+        </ul>
+
+        <input type="text" id="myInput">
+        <button id="myBtn">添加</button>
+
+
+    <script src="../jquery-1.11.1.js"></script>
+
+    <script>
+         $(function() {
+            $("#myList").on("click","li",function() {
+                $(this).toggleClass(("current"))
+            })
+            $("#myBtn").click(function() {
+                $("<li>").html($("#myInput").val()).appendTo($("#myList"))
+            })
+        })
+    </script>
+</body>
+</html>
